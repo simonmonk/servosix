@@ -20,9 +20,9 @@ class ServoSix:
         elif angle < 0 or angle > 180:
             print("Angle 0 to 180")
         else:
-            range = servo_max - servo_min
+            range = self.servo_max - self.servo_min
             scaler = range / 180
-            pulse = servo_min + angle * scaler
+            pulse = self.servo_min + angle * scaler
             command = "echo {}={}us > /dev/servoblaster".format(servo, pulse)
             os.system(command)
 
