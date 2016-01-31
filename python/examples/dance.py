@@ -20,8 +20,10 @@ def dance_step(step):
   ss.set_servo(4, step[3])
   
 
-
-while (True): 
-  for step in dance:
-      dance_step(step)
-      time.sleep(delay)
+try:
+    while (True): 
+        for step in dance:
+            dance_step(step)
+            time.sleep(delay)
+finally:
+    ss.cleanup()

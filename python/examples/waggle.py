@@ -5,8 +5,12 @@ ss = ServoSix()
 
 period = 0.5
 
-while (True):  
-    ss.set_servo(1, 0)
-    time.sleep(period)
-    ss.set_servo(1, 180)
-    time.sleep(period)
+try:
+    while (True):  
+        ss.set_servo(1, 0)
+        time.sleep(period)
+        ss.set_servo(1, 180)
+        time.sleep(period)
+    
+finally:
+    ss.cleanup()
