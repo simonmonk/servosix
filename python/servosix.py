@@ -28,7 +28,7 @@ class ServoSix:
 
     def cleanup(self):
         # stop the service
-        os.system("sudo killall servoblaster")
+        os.system("sudo killall servod")
         # disable it so it doesn't start after reboot'
         os.system("sudo update-rc.d servoblaster disable")		
 
