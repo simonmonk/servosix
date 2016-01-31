@@ -1,19 +1,19 @@
 from servosix import ServoSix
 import time
 
-ss = ServoSix(18, 23)
+ss = ServoSix()
 
-dance = [      # 3
+dance = [     
   #lh  lf  rf  rh
   [90, 90, 90, 90],
   [130, 30, 30, 130],
   [30, 130, 130, 30]    
 ]
 
-delay = 0.2   # 4
+delay = 0.2 
  
   
-def dance_step(step):  # 7
+def dance_step(step): 
   ss.set_servo(1, step[0])
   ss.set_servo(2, step[1])
   ss.set_servo(3, step[2])
@@ -21,7 +21,7 @@ def dance_step(step):  # 7
   
 
 
-while (True):   # 9
+while (True): 
   for step in dance:
       dance_step(step)
       time.sleep(delay)

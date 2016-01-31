@@ -1,7 +1,7 @@
 from servosix import ServoSix
 import time
 
-ss = ServoSix(18, 23)
+ss = ServoSix()
 
 period = 0.5
 

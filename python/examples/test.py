@@ -1,7 +1,7 @@
 import time
 from servosix import ServoSix
 
-ss = ServoSix(18, 23)
+ss = ServoSix()
 
 while True:
     servo = input("servo:")
