@@ -1,7 +1,17 @@
 # servosix
 Python library for the ServoSix motor controller from Monkmakes
 
+## Installation
+
+'''
+$ git clone https://github.com/simonmonk/servosix.git
+$ cd servosix/python
+$ sudo python setup.py install
+'''
+
 Many thanks to Richard Hurst for giving me permission to use his rather wonderful ServoBlaster code as part of this project. You can find Richard's original Github repository here: https://github.com/richardghirst/PiBits/tree/master/ServoBlaster
+
+## Pin Allocations
 
 The code defaults to driving 8 servos, the control signals of which should be
 connected to P1 header pins as follows:
