@@ -1,5 +1,8 @@
 # servosix
-Python library for the ServoSix motor controller from Monkmakes
+Python library for controlling servo motors accurately, without any jitter.
+
+This library is of general use for anyone connecting servomotors to their Raspberry Pi, but is designed specifically for the MonkMakes Servo Six board http://monkmakes.com/servo-six.
+
 
 ## Installation
 
@@ -10,6 +13,28 @@ $ sudo python setup.py install
 ```
 
 Many thanks to Richard Hurst for giving me permission to use his rather wonderful ServoBlaster code as part of this project. You can find Richard's original Github repository here: https://github.com/richardghirst/PiBits/tree/master/ServoBlaster
+
+## Getting Started
+
+To get started, attach a servo or several servos using the control pins listed in the next section. If you are using a Servo Six Board from MonkMakes, then attach the servo as shown below:
+
+
+![ServoSix](http://i1.wp.com/www.monkmakes.com/wp-content/uploads/2016/06/servo_six_pi-web.jpg)
+
+You will also need to attach a 5 or 6V power supply or battery box to the screw terminals.
+
+Now run the test program in the examples folder using:
+
+
+```
+$ cd examples
+$ sudo python test.py
+servo: 1
+angle: 90
+```
+
+You will be prompted to enter the servo number (0 to 7) and the angle that you want to set the servo's arm to (0 to 180).
+
 
 ## Pin Allocations
 
@@ -26,4 +51,4 @@ connected to P1 header pins as follows:
           6              24             P1-18
           7              25             P1-22
 
-P1-13 is connected to either GPIO-21 or GPIO-27, depending on board revision.
+P1-13 is connected to either GPIO-21 or GPIO-27, depending on board revision. If you have a very old original Raspberry Pi B revision 1, then use 21. Also keep your Pi safe its a valuable rarity.
