@@ -54,3 +54,36 @@ connected to P1 header pins as follows:
           7              25             P1-22
 
 P1-13 is connected to either GPIO-21 or GPIO-27, depending on board revision. If you have a very old original Raspberry Pi B revision 1, then use 21. Also keep your Pi safe its a valuable rarity.
+
+
+## API
+
+
+### Importing
+
+```
+from servosix import ServoSix
+```
+
+### Creating an Instance
+
+```
+ss = ServoSix()
+```
+
+### Setting a Servo Position
+
+```
+ss.set_servo(1, 90)
+```
+
+The first parameter is the servo channel and the second the angle you want to set it to.
+
+
+### Cleaning Up
+
+```
+ss.cleanup()
+```
+
+This should be called before your program exits to free up the GPIO pins for any other program that may want to use them.
