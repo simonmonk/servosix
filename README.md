@@ -33,7 +33,9 @@ servo: 1
 angle: 90
 ```
 
-You will be prompted to enter the servo number (0 to 7) and the angle that you want to set the servo's arm to (0 to 180).
+You will be prompted to enter the servo number (0 to 7) and the angle that you want to set the servo's arm to (0 to 180). When you've had enough press CTRL-C.
+
+There are some other programs that you can use as examples for your own code, including programs for the Monk Makes Puppet Kit for Raspberry Pi (http://monkmakes.com/puppet-kit).
 
 
 ## Pin Allocations
