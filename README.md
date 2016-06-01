@@ -16,7 +16,7 @@ Many thanks to Richard Hurst for giving me permission to use his rather wonderfu
 
 ## Getting Started
 
-To get started, attach a servo or several servos using the control pins listed in the next section. If you are using a Servo Six Board from MonkMakes, then attach the servo as shown below:
+To get started, attach a servo or several servos using the control pins listed in the next section. If you are using a Servo Six Board from MonkMakes, then attach as many servos as you want as shown below. You need to connect the GND on the Servo Six to the GND on Raspberry Pi and as many control pins on the Servo Six as servo channels that you want to use. Next to each servo channel connector on the top of the Servo Six the GPIO pin to connect to is labeled:
 
 
 ![ServoSix](http://i1.wp.com/www.monkmakes.com/wp-content/uploads/2016/06/servo_six_pi-web.jpg)
