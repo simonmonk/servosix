@@ -14,7 +14,6 @@ from servosix import ServoSix
 
 angles = [90, 90, 90, 90]
 recording = []
-i = 0
 ss = ServoSix()
 
 def inc_angle(servo):
@@ -56,7 +55,7 @@ def readkey(getchar_fn=None):
 
 def playback():
     print(recording)
-    for x in range(0, i):
+    for x in range(0, len(recoding)-1):
         ss.set_servo(1, recording[x][0])
         ss.set_servo(2, recording[x][1])
         ss.set_servo(3, recording[x][2])
