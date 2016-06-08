@@ -16,12 +16,14 @@ ss = ServoSix()
 def inc_angle(servo):
     if angles[servo-1] < 180:
         angles[servo-1] += 5
+        print("servo " + str(servo) + " set to " + angles[servo-1])
         ss.set_servo(servo, angles[servo-1])
 
 
 def dec_angle(servo):
     if angles[servo-1] > 0:
         angles[servo-1] -= 5
+        print("servo " + str(servo) + " set to " + angles[servo-1])
         ss.set_servo(servo, angles[servo-1])
 
 # These functions allow the program to read your keyboard
@@ -49,14 +51,26 @@ def readkey(getchar_fn=None):
     return ord(c3) - 65  # 0=Up, 1=Down, 2=Right, 3=Left arrows
 
 
-try: 
-    while True:
+print("x to exit")
+while True:
         k = readkey()
         if k == 'q':
-            inc_angle(1)
+            dec_angle(1)
         elif k == 'a':
-        	    dec_angle(1)
-
-except KeyboardInterrupt:
-    pass
-
+        	    inc_angle(1)
+        elif k == 'w':
+            inc_angle(2)
+        elif k == 's':
+        	    dec_angle(2)
+        elif k == 'e':
+            dec_angle(3)
+        elif k == 'd':
+        	    inc_angle(3)
+        elif k == 'r':
+            inc_angle(4)
+        elif k == 'f':
+        	    dec_angle(4)
+        elif k == 'x':
+        	    ss.cleanup()
+        	    exit()
+        	    
