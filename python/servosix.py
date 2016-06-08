@@ -25,10 +25,24 @@ class ServoSix:
             pulse = self.servo_min + angle * scaler
             command = "echo {}={}us > /dev/servoblaster".format(servo, pulse)
             os.system(command)
+            
+            
+    def move_servo(self, servo, start_angle, end_angle, delay):
+        inc = 1
+        angle = start_angle
+        if start_angle > end_angle:
+            inc = -1
+        while angle != end_angle:
+            angle += inc
+            self.set_servo(servo, angle)
+            time.sleep(delay)
+            
 
     def cleanup(self):
         # stop the service
         os.system("sudo /usr/bin/killall servod")
         # disable it so it doesn't start after reboot'
         os.system("sudo update-rc.d servoblaster disable")		
+
+ss = ServoSix()
 

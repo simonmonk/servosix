@@ -1,17 +1,20 @@
 # Use the following keys to move servos 1 to 4
+# To make an animation, press the spacebar to record the current frame
+# To playback the recoded frames press p. This also dumps the frames for use in another program
 #
 # Servo 1 2 3 4
 # Up    1 2 3 4
 # Down  q w e r
 
-
-
+import time
 import sys
 import tty
 import termios
 from servosix import ServoSix
 
 angles = [90, 90, 90, 90]
+recording = []
+i = 0
 ss = ServoSix()
 
 def inc_angle(servo):
@@ -51,6 +54,14 @@ def readkey(getchar_fn=None):
     c3 = getchar()
     return ord(c3) - 65  # 0=Up, 1=Down, 2=Right, 3=Left arrows
 
+def playback():
+    print(recording)
+    for x in range(0, i):
+        ss.set_servo(1, recording[x][0])
+        ss.set_servo(2, recording[x][1])
+        ss.set_servo(3, recording[x][2])
+        ss.set_servo(4, recording[x][3])
+        time.sleep(0.1)
 
 print("x to exit")
 while True:
@@ -71,6 +82,10 @@ while True:
             inc_angle(4)
         elif k == 'r':
         	    dec_angle(4)
+        elif k == ' ':
+        	    recording.append(list(angles))
+        elif k == 'p':
+        	    playback()
         elif k == 'x':
         	    ss.cleanup()
         	    exit()
