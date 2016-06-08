@@ -55,7 +55,7 @@ def readkey(getchar_fn=None):
 
 def playback():
     print(recording)
-    for x in range(0, len(recoding)-1):
+    for x in range(0, len(recording)-1):
         ss.set_servo(1, recording[x][0])
         ss.set_servo(2, recording[x][1])
         ss.set_servo(3, recording[x][2])
