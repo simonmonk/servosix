@@ -1,7 +1,7 @@
 # servosix
 Python library for controlling servo motors accurately, without any jitter.
 
-This library is of general use for anyone connecting servomotors to their Raspberry Pi, but is designed specifically for the MonkMakes Servo Six board http://monkmakes.com/servo-six.
+This library is of general use for anyone connecting servomotors to their Raspberry Pi, but is designed specifically for the MonkMakes Servo Six board http://monkmakes.com/servosix.
 
 
 ## Installation
