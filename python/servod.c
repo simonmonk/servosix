@@ -957,7 +957,7 @@ get_model_and_revision(void)
 
 	if (strstr(modelstr, "BCM2708"))
 		board_model = 1;
-	else if (strstr(modelstr, "BCM2709"))
+	else if (strstr(modelstr, "BCM2709") || strstr(modelstr, "BCM2835"))
 		board_model = 2;
 	else
 		fatal("servod: Cannot parse the hardware name string\n");
