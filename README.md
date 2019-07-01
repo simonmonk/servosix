@@ -1,3 +1,6 @@
+# PLEASE NOTE - THIS LIBRARY IS NO LONGER BEING MAINTAINED
+# INSTEAD, WE SUGGEST YOU USE: https://gpiozero.readthedocs.io/en/stable/api_output.html#angularservo
+
 # servosix
 Python library for controlling servo motors accurately, without any jitter.
 
